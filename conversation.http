@@ -1,0 +1,26 @@
+### Introduction
+POST http://localhost:8000/chat HTTP/1.1
+Content-Type: application/json
+
+{
+    "message": "Hello, my name is Patricio",
+    "conversation_id":"1"
+}
+
+### question
+POST http://localhost:8000/chat HTTP/1.1
+Content-Type: application/json
+
+{
+    "message": "I'm doing fine, what's my name?",
+    "conversation_id":"1"
+}
+
+### 
+POST http://localhost:8000/chat HTTP/1.1
+Content-Type: application/json
+
+{
+    "message": "Good bye!",
+    "conversation_id":"1"
+}
