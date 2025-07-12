@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   ollama:
     build:
-      context: .
+      context: ./ollama
       dockerfile: Dockerfile.ollama
     container_name: ollama-llama2
     ports:
@@ -14,7 +12,7 @@ services:
 
   backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile.backend
     container_name: ai-backend
     ports:
@@ -23,6 +21,17 @@ services:
       - ollama
     volumes:
       - ./backend:/app/backend
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
     restart: unless-stopped
 
 volumes:

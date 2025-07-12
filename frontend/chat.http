@@ -1,0 +1,12 @@
+POST http://localhost:8000/chat HTTP/1.1
+Content-Type: application/json
+
+{"message":"hello","conversation_id":"default"}
+
+###
+GET http://localhost:8000/ping HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/chat/ping HTTP/1.1
+Content-Type: application/json
